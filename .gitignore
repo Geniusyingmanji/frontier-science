@@ -1,0 +1,18 @@
+# --- Secrets / local LLM config (NEVER commit the keyless GPT-5.5 endpoint) ---
+.env
+**/conf/llm/local.yaml
+**/conf/llm/local.*.yaml
+secrets/
+*.secret.yaml
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venvs/
+
+# --- Run outputs / large artifacts ---
+runs/
+*.log
+.fs_cache/

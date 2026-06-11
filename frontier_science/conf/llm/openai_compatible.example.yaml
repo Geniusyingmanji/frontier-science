@@ -1,0 +1,13 @@
+# Frontier-Science LLM config — PUBLIC EXAMPLE (safe to commit).
+#
+# Copy this to `conf/llm/local.yaml` (git-ignored) and fill in your own endpoint.
+# Any OpenAI-compatible Chat Completions endpoint works: OpenAI, Azure OpenAI,
+# vLLM, Together, DeepSeek, etc. Do NOT commit real keys.
+
+wire: chat                         # "chat" (chat/completions) or "responses"
+base_url: https://api.openai.com/v1
+api_key: ${OPENAI_API_KEY}         # read from the environment; never hard-code a key
+model: gpt-4o
+max_output_tokens: 8000
+temperature: 0.7
+timeout_seconds: 600

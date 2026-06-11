@@ -1,0 +1,11 @@
+domain: Chemistry
+task: LennardJonesCluster
+difficulty: medium
+oracle_type: analytical          # analytical | physical_sim | dataset_oracle | neural_surrogate
+gpu_required: false
+eval_time_seconds: 5
+science_metric: mean_gap_closed_to_global_minimum
+test_sizes: [7, 13, 19]
+reference_baseline: random_gas           # the initial program
+reference_sota: cambridge_cluster_database_global_minima
+citation: "Wales & Doye, J. Phys. Chem. A 101, 5111 (1997); Cambridge Cluster Database"
