@@ -1,0 +1,11 @@
+domain: ScientificComputing
+task: PoissonSolver2D
+difficulty: medium
+oracle_type: analytical
+gpu_required: false
+eval_time_seconds: 5
+science_metric: log_scaled_error_reduction
+grid: 49
+reference_baseline: jacobi_50_sweeps
+reference_sota: fourth_order_mehrstellen
+citation: "Collatz, The Numerical Treatment of Differential Equations (1960); LeVeque, FDM (2007)"

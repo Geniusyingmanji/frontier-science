@@ -16,3 +16,6 @@ __pycache__/
 runs/
 *.log
 .fs_cache/
+
+# raw run logs (curated record lives in experiments/LOG.md)
+experiments/*.out

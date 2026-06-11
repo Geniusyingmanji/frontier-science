@@ -36,3 +36,29 @@ global optimization is genuinely difficult. Tracked as a v0.1 hardening item.
 
 **Status**: end-to-end loop proven (harness + black-box contract + keyless GPT-5.5 + continuous
 reward all functioning).
+
+---
+
+## 2026-06-11 — two more domains added (Physics, Scientific Computing)
+
+**Physics/SpinGlassGroundState**: Sherrington–Kirkpatrick Ising ground state. Instances
+N∈{16,18,20} (seed 0); exact ground states found by full enumeration (Gray-code brute force,
+cross-checked against naive `itertools` enumeration for N=16: −6.985473 ✓) and embedded as the
+normalization ceiling. Score = mean over instances of clip((E_allup − E_found)/(E_allup − E_min), 0, 1).
+- **Baseline (best-of-3 random)**: combined_score = **0.146**.
+- Evolve (GPT-5.5, budget 5): _pending — see below._
+
+**ScientificComputing/PoissonSolver2D**: −∇²u=f on (0,1)², Dirichlet, hidden multi-mode
+manufactured solution (single-mode shortcut `u=f/(2π²)` verified wrong: err 2.98). Score =
+log-scaled error reduction between Jacobi-50 (E=0.820) and 4th-order Mehrstellen (E=1.48e-6);
+2nd-order direct solve ≈ 0.48, 4th-order/spectral → 1.0.
+- **Baseline (Jacobi 50 sweeps)**: combined_score ≈ **0.0**.
+- Evolve (GPT-5.5, budget 5): _pending — see below._
+
+### Baseline leaderboard (v0, initial programs)
+
+| Task | Domain | Baseline combined_score |
+|---|---|---|
+| LennardJonesCluster | Chemistry | 0.0767 |
+| SpinGlassGroundState | Physics | 0.1459 |
+| PoissonSolver2D | ScientificComputing | ~0.0 |
