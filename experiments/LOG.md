@@ -62,3 +62,40 @@ log-scaled error reduction between Jacobi-50 (E=0.820) and 4th-order Mehrstellen
 | LennardJonesCluster | Chemistry | 0.0767 |
 | SpinGlassGroundState | Physics | 0.1459 |
 | PoissonSolver2D | ScientificComputing | ~0.0 |
+
+### Evolve results (GPT-5.5, keyless, budget 5–6)
+
+| Task | Baseline | Best | Iters to best | Winning method (verified legitimate) |
+|---|---|---|---|---|
+| LennardJonesCluster | 0.0767 | **1.000** | 6 | analytic LJ energy+grad, L-BFGS-B, FCC/icosahedral seeds, basin-hopping |
+| SpinGlassGroundState | 0.1459 | **1.000** | 1 | greedy + tabu search + spectral-eigenvector starts + iterated local search (248 lines) |
+| PoissonSolver2D | ~0.0 | **1.000** | 1 | spectral solve — divide each mode by its eigenvalue (27 lines) |
+
+All three winners are genuine, correct scientific optimizers with **no oracle access and no
+hardcoded answers** (checked by reading each `best_program.py`).
+
+### KEY FINDING — v0 instances saturate for a frontier model
+
+GPT-5.5 drives **all three tasks to combined_score ≈ 1.0**, usually in one iteration, by
+writing the textbook-strong algorithm (basin-hopping / tabu+spectral ILS / spectral solver).
+The harness, black-box contract, keyless GPT-5.5 loop, and continuous reward are fully proven
+end-to-end and across three domains — but the current *instances* are too easy to discriminate
+strong models. This is the central design lesson for turning the proof-of-concept into a real
+benchmark.
+
+### v0.1 hardening plan (make scores live in (0,1) for frontier models)
+
+- **LennardJonesCluster**: add hard non-icosahedral sizes — N=38 (FCC truncated octahedron),
+  N=75/76/77 (Marks decahedra), N=98 — where basin-hopping needs many restarts; cap per-size
+  wall-clock so a single L-BFGS pass cannot reach the global minimum.
+- **SpinGlassGroundState**: scale to N=40–80 where exact ground states are unknown; normalize
+  against a strong reference (e.g. best of long parallel tempering) and allow scores >1 to be
+  reported (uncapped) so genuine improvements over the reference are visible; add many seeded
+  instances to reduce variance.
+- **PoissonSolver2D**: switch to an accuracy×cost objective with a FLOP/wall-clock budget, and
+  a non-separable RHS (no clean modal spectral shortcut), so higher-order *and* efficient
+  solvers are rewarded rather than an exact modal reconstruction.
+- Cross-cutting: report sample-efficiency (AUC of best-score vs eval count), not just final
+  best, so the metric stays continuous even when the ceiling is reachable.
+
+These are tracked as the next implementation step; v0 is committed as the working foundation.
