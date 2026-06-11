@@ -18,7 +18,7 @@
   **没有一个统一框架横跨蛋白质 / 分子 / 晶体 / 量子 / 符号回归 / 神经科学 / 地球科学，并以冻结 Oracle 给连续可提升奖励。** 这正是 Frontier-Science 的定位。
 - **复用**：直接复用 Frontier-Engineering 的 `frontier_eval/` driver + `UnifiedTask` 契约 + OpenEvolve / ABMCTS / ShinkaEvolve 算法框架。
   **新增一个科学任务 = 新建一个 benchmark 目录 + 一个 conf YAML，无需改动 harness 代码。**
-- **初期模型**：本地 **Azure 免 key 的 GPT-5.5**（`codex-azure-mi -p azure_uami`，或 127.0.0.1:9876 的 OpenAI 兼容代理）用于打通 + smoke。
+- **初期模型**：用一个 OpenAI 兼容端点（`base_url`/`api_key`/`model`）打通 + smoke；本地测试端点放在 git-ignore 的 `conf/llm/local.yaml`，不入库。
 
 ---
 
@@ -267,9 +267,10 @@ citation: "Hsu et al., 2022; Dauparas et al., 2022"
 ### 4.6 算法 / LLM 集成
 
 - **算法框架**：复用工程版 `conf/algorithm/{openevolve,abmcts,shinkaevolve}.yaml`，迭代修改 `scripts/init.py`。
-- **本地 Azure 免 key GPT-5.5**：新增 `conf/llm/azure_gpt55.yaml`，初期用于打通与 smoke。两条调用路径：
-  - Codex CLI：`codex-azure-mi -p azure_uami exec ...`（managed-identity 自动刷新 token，model=gpt-5.5）。
-  - OpenAI 兼容代理：`http://127.0.0.1:9876`（OpenEvolve / ABMCTS 的 `openai_compatible` LLM 直接指向它）。
+- **LLM 接口**：仓库只保留通用的 OpenAI 兼容接口（`base_url` / `api_key` / `model`），见
+  `frontier_science/conf/llm/openai_compatible.example.yaml`。任何 OpenAI 兼容端点（OpenAI、
+  Azure OpenAI、vLLM 等）均可接入。
+- **本地测试**：把示例配置拷成 `conf/llm/local.yaml`（已 git-ignore）填入自己的端点即可；不提交任何 key。
 
 ---
 
@@ -304,7 +305,7 @@ citation: "Hsu et al., 2022; Dauparas et al., 2022"
 
 ### Phase 0 — 打通 harness（1 周）
 - [ ] 将 Frontier-Engineering 的 `frontier_eval/` driver 移植/子模块化进本仓库；跑通工程版任一 `UnifiedTask` smoke。
-- [ ] 配好本地 Azure GPT-5.5：`conf/llm/azure_gpt55.yaml` 指向 9876 代理；用 OpenEvolve 跑 1 次 1-iter smoke 验证回路。
+- [ ] 配好本地 LLM：拷 `openai_compatible.example.yaml` 为 git-ignore 的 `conf/llm/local.yaml`；跑 1 次 smoke 验证回路。
 - [ ] 产出 `conf/task` + `conf/llm` 模板，确认“新增任务=加目录+加 YAML”路径成立。
 
 ### Phase 1 — 4 个 Easy 种子任务（2–3 周）
@@ -331,7 +332,7 @@ citation: "Hsu et al., 2022; Dauparas et al., 2022"
 | 重资产/依赖（ESMFold、MACE、ClimSim、LALSuite）安装难 | 按 Frontier-Eng 的 `scripts/bootstrap/fetch_task_assets.py` 思路做资产引导；Hard 任务延后到 P3 |
 | 数据集类任务可“查表”作弊 | 隔离目录 + test split 分离 + 只读约束 + 沙箱评估 |
 | 代理模型（fast）与精确 Oracle 排序不一致 | metadata 记录二者相关性；最终榜以 exact 为准，fast 仅迭代期 |
-| GPT-5.5 token / 速率限制 | 9876 代理自愈旧会话；P0/P1 用小 iter 预算；批量走 `scripts/batch` |
+| LLM token / 速率限制 | P0/P1 用小 iter 预算；批量走 `scripts/batch`；端点可替换 |
 | 引用准确性（部分基准 arXiv 号待核） | 论文阶段逐条核对 DBLP/arXiv |
 
 ---
