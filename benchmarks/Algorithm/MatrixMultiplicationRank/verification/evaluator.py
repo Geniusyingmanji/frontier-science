@@ -20,7 +20,7 @@ import numpy as np
 SIZES = [
     {"mnp": (2, 2, 2), "naive": 8,  "sota_ref": 7,  "note": "Strassen 1969"},
     {"mnp": (3, 3, 3), "naive": 27, "sota_ref": 23, "note": "Laderman 1976"},
-    {"mnp": (4, 4, 4), "naive": 64, "sota_ref": 49, "note": "Strassen^2; AlphaEvolve 48 over C"},
+    {"mnp": (4, 4, 4), "naive": 64, "sota_ref": 48, "note": "AlphaEvolve 2025 (48 over C); recursive Strassen=49"},
 ]
 TOL = 1e-7
 

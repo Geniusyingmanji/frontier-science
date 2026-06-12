@@ -51,8 +51,8 @@ score(size) = max(0, (R_naive − R_found) / (R_naive − R_sota))      # UNCAPP
 
 So the naive algorithm scores 0, matching the published best scores 1.0, and **beating it
 scores above 1.0**. `combined_score` is the mean over sizes. Sizes evaluated: 2×2×2 (best 7),
-3×3×3 (best 23), 4×4×4 (best 49; 48 known over ℂ). An invalid/inexact decomposition scores 0
-for that size.
+3×3×3 (best 23), 4×4×4 (best **48**, AlphaEvolve 2025, over ℂ — recursive Strassen only reaches
+49). An invalid/inexact decomposition scores 0 for that size.
 
 ## Rules
 

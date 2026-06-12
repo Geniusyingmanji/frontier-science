@@ -99,3 +99,47 @@ benchmark.
   best, so the metric stays continuous even when the ceiling is reachable.
 
 These are tracked as the next implementation step; v0 is committed as the working foundation.
+
+---
+
+## 2026-06-12 — flagship tier (T3): MatrixMultiplicationRank + CapSet
+
+Two deterministic, CPU-cheap, zero-asset flagship tasks scored **uncapped** vs. best-known
+(reach SoTA = 1.0, beat it > 1.0). See `docs/difficulty_and_flagship_plan.md`.
+
+**Algorithm/MatrixMultiplicationRank** — agent emits a rank-R bilinear decomposition of the
+matmul tensor; oracle verifies exactness (tensor reconstruction to 1e-7 + random integer
+matrices) and returns R. Sizes 2×2×2 / 3×3×3 / 4×4×4, anchored at best-known 7 / 23 / **48**
+(AlphaEvolve 2025; recursive Strassen=49 → 0.9375 on 4×4).
+- Baseline (naive schoolbook): **0.0**.
+- Evolve (GPT-5.5, budget 6): baseline 0 → **0.979** (iter 3). It reproduced Strassen (7),
+  **Laderman's 23-mult 3×3**, and recursive Strassen (49) — all *verified exact* — but did not
+  reach the 48 frontier. Headroom to ≥1.0 remains open.
+
+**Mathematics/CapSet** — agent builds large cap sets in Z₃ⁿ (no 3 distinct collinear); oracle
+verifies and returns |S|. Dims 4/5/6 anchored at the proven maxima 20/45/112; baseline = {0,1}ⁿ
+(size 2ⁿ).
+- Baseline ({0,1}ⁿ): **0.0**.
+- Evolve (GPT-5.5, budget 6): baseline 0 → **0.657** (does NOT saturate). Per-dim: n=4 size **20**
+  (= proven max, score 1.0), n=5 size **40** (vs 45, 0.615), n=6 size **81** (vs 112, 0.354), via
+  product constructions of small caps. First 3 iters scored 0 (invalid/no improvement) before it
+  found a working construction.
+
+### KEY FINDING — uncapped SoTA-relative scoring on open-frontier problems resists saturation
+
+Unlike the v0 tasks (all → 1.0), the flagship tasks land a frontier model in (0,1):
+**MatrixMultiplicationRank 0.979, CapSet 0.657.** CapSet is the model unsaturable task — GPT-5.5
+matches the dim-4 optimum but falls well short on dims 5–6, and beating the known maximum on
+n ≥ 7 (score > 1.0) is a genuine research frontier. This validates the difficulty-ladder thesis:
+keep an easy on-ramp (v0) but anchor the hard tier on problems whose best-known value is a live
+frontier, scored uncapped so there is always headroom.
+
+### Combined leaderboard (GPT-5.5, keyless evolve)
+
+| Task | Tier | Baseline | GPT-5.5 best | Saturates? |
+|---|---|---|---|---|
+| ScientificComputing/PoissonSolver2D | T0 | ~0.0 | 1.000 | yes (1 iter) |
+| Physics/SpinGlassGroundState | T0 | 0.146 | 1.000 | yes (1 iter) |
+| Chemistry/LennardJonesCluster | T0 | 0.077 | 1.000 | yes (6 iters) |
+| Algorithm/MatrixMultiplicationRank | T3 | 0.0 | **0.979** | near (48 frontier open) |
+| Mathematics/CapSet | T3 | 0.0 | **0.657** | **no** (dims 5–6 + n≥7 open) |
