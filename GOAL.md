@@ -42,6 +42,14 @@ cross-task leaderboard.
 All four are genuine continuous-optimization problems with documented reference values.
 The harness adds tasks with **no harness code change** (new benchmark dir + entry).
 
+## Difficulty ladder & flagship tasks
+
+v0 tasks saturate to ~1.0 for a frontier model. The next phase adds a difficulty ladder
+(easy on-ramp → AlphaFold/AlphaEvolve-tier flagships scored uncapped vs. SoTA). See
+[`docs/difficulty_and_flagship_plan.md`](docs/difficulty_and_flagship_plan.md). First flagships
+to build: `Algorithm/MatrixMultiplicationRank` and `Mathematics/CapSet` (deterministic, CPU-cheap,
+zero-asset, unsaturable).
+
 ## Status log
 
 See [`experiments/LOG.md`](experiments/LOG.md) for the running experiment record.
