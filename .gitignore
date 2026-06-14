@@ -19,3 +19,8 @@ runs/
 
 # raw run logs (curated record lives in experiments/LOG.md)
 experiments/*.out
+
+# --- Internal planning docs (kept local, not shipped) ---
+GOAL.md
+plan.md
+docs/
