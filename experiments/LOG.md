@@ -143,3 +143,40 @@ frontier, scored uncapped so there is always headroom.
 | Chemistry/LennardJonesCluster | T0 | 0.077 | 1.000 | yes (6 iters) |
 | Algorithm/MatrixMultiplicationRank | T3 | 0.0 | **0.979** | near (48 frontier open) |
 | Mathematics/CapSet | T3 | 0.0 | **0.657** | **no** (dims 5–6 + n≥7 open) |
+
+---
+
+## 2026-06-15 — 3 new tasks: GraphMaxCut, ProteinLatticeHP, CirclePacking
+
+Expanded from 5 to **8 tasks across 8 scientific domains**.
+
+**Combinatorics/GraphMaxCut** — weighted max-cut on seeded random graphs (n=18/20/22); exact
+optima by brute-force enumeration; clipped. Baseline (best-of-3 random) ~0.
+- Evolve (GPT-5.5, budget 5): 0 → **1.0** (iter 1). Wrote a greedy + local-search or
+  spectral-SDP solver that reaches the exact optimum.
+
+**Biology/ProteinLatticeHP** — HP lattice protein folding (2D); 3 benchmark sequences with
+known optimal energies (Dill / Unger–Moult). Baseline (straight fold, 0 contacts) = 0.
+- Evolve (GPT-5.5, budget 5): 0 → **1.0** (iter 2). All optimal folds found.
+
+**Optimization/CirclePacking** — pack unit circles in smallest square; N=7/10/13 anchored at
+Packomania best-known. Baseline (regular grid) = 0.
+- Evolve (GPT-5.5, budget 5): 0 → **0.999** (iter 2). Near-optimal packings via force-directed
+  or simulated-annealing approach; some iters timed out on complex candidates.
+
+### Updated combined leaderboard (GPT-5.5, keyless evolve)
+
+| Task | Tier | Baseline | GPT-5.5 best | Saturates? |
+|---|---|---|---|---|
+| PoissonSolver2D | T0 | ~0 | 1.000 | yes |
+| SpinGlassGroundState | T0 | 0.146 | 1.000 | yes |
+| LennardJonesCluster | T0 | 0.077 | 1.000 | yes |
+| GraphMaxCut | T1 | ~0 | 1.000 | yes |
+| ProteinLatticeHP | T1 | 0 | 1.000 | yes |
+| CirclePacking | T1 | 0 | 0.999 | near |
+| MatrixMultiplicationRank | T3 | 0 | **0.979** | no (48 frontier) |
+| CapSet | T3 | 0 | **0.657** | **no** |
+
+**Pattern confirmed**: tasks with known reachable optima (T0/T1) saturate for GPT-5.5; only
+the flagship T3 tasks with open-frontier optima resist. The full benchmark now has a clean
+difficulty ladder: easy calibration (6 tasks) + genuinely hard flagships (2 tasks).

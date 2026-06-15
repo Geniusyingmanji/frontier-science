@@ -8,17 +8,23 @@ oracle** (simulator / analytic solution / dataset) that returns a **continuous, 
 It is the science counterpart of
 [Frontier-Engineering](https://github.com/EinsiaLab/Frontier-Engineering): same
 generative-optimization paradigm and black-box per-task contract, applied to scientific
-discovery. See [`plan.md`](plan.md) for the full design and [`GOAL.md`](GOAL.md) for status.
+discovery. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for how to add new tasks.
 
-## Tasks (v0)
+## Tasks
 
-| Task | Domain | Oracle | Metric |
-|---|---|---|---|
-| `Chemistry/LennardJonesCluster` | molecular mechanics | LJ energy vs Cambridge Cluster DB global minima | mean gap-closed |
-| `Physics/SpinGlassGroundState` | statistical mechanics | exact SK ground state (enumeration) | mean gap-closed |
-| `ScientificComputing/PoissonSolver2D` | scientific computing | analytic-solution L2 error | log-scaled error reduction |
+| Task | Domain | Difficulty | Oracle | Metric |
+|---|---|---|---|---|
+| `Chemistry/LennardJonesCluster` | molecular mechanics | medium | LJ energy vs Cambridge Cluster DB | mean gap-closed |
+| `Physics/SpinGlassGroundState` | statistical mechanics | medium | exact SK ground state | mean gap-closed |
+| `ScientificComputing/PoissonSolver2D` | scientific computing | medium | analytic-solution L2 error | log-scaled error reduction |
+| `Combinatorics/GraphMaxCut` | combinatorial optimization | hard | exact max-cut (weighted) | mean gap-closed |
+| `Biology/ProteinLatticeHP` | biophysics | hard | HP lattice energy (2D) | mean fraction of optimal contacts |
+| `Optimization/CirclePacking` | computational geometry | hard | valid packing side length | mean gap from grid to Packomania best |
+| `Algorithm/MatrixMultiplicationRank` | algebraic complexity | **flagship** | exact tensor decomposition | uncapped, SoTA-relative (AlphaEvolve) |
+| `Mathematics/CapSet` | extremal combinatorics | **flagship** | cap-set verification | uncapped, SoTA-relative (FunSearch) |
 
-All v0 oracles are pure `numpy`/`scipy` with documented reference values.
+All oracles are pure `numpy`/`scipy`, CPU-only, with documented reference values. Flagship
+tasks use **uncapped scoring** — reaching published SoTA = 1.0, beating it > 1.0.
 
 ## Quickstart
 
@@ -52,5 +58,6 @@ change is needed — the task is auto-discovered. Use an existing task as a temp
 
 The agent sees only `Task.md`, the editable program, `constraints.txt`, and the returned
 `metrics.json`. It never sees `verification/` (the oracle) or the eval internals. Each
-candidate is run in a subprocess; `combined_score ∈ [0,1]` after per-task normalization
-`(score − baseline) / (reference_sota − baseline)`.
+candidate is run in a subprocess; `combined_score` ranges from 0 (baseline) to 1 (SoTA)
+for clipped tasks, and is uncapped (>1 = beat SoTA) for flagship tasks. See
+[`CONTRIBUTING.md`](CONTRIBUTING.md) for the full spec.
