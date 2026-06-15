@@ -1,0 +1,12 @@
+domain: Biology
+task: ProteinLatticeHP
+difficulty: hard
+oracle_type: analytical
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 10
+science_metric: mean_fraction_of_optimal_contacts
+sequences: [HP20, HP25, HP36]
+reference_baseline: straight_line_fold
+reference_sota: "known_optimal: HP20=-9, HP25=-8, HP36=-14 (Dill 1985, Unger & Moult 1993)"
+citation: "Dill 1985; Unger & Moult 1993; Yue & Dill 1995"
