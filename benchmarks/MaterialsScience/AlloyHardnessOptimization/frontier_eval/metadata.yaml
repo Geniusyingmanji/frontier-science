@@ -1,0 +1,11 @@
+domain: MaterialsScience
+task: AlloyHardnessOptimization
+difficulty: hard
+oracle_type: dataset_oracle
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 5
+science_metric: max_hardness_found
+reference_baseline: "random_composition"
+reference_sota: "pareto_optimal_hardness"
+citation: "Miracle & Senkov 2017; Wen et al. 2019 (HEA)"
