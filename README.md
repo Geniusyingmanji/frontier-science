@@ -12,19 +12,24 @@ discovery. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for how to add new tasks.
 
 ## Tasks
 
-| Task | Domain | Difficulty | Oracle | Metric |
-|---|---|---|---|---|
-| `Chemistry/LennardJonesCluster` | molecular mechanics | medium | LJ energy vs Cambridge Cluster DB | mean gap-closed |
-| `Physics/SpinGlassGroundState` | statistical mechanics | medium | exact SK ground state | mean gap-closed |
-| `ScientificComputing/PoissonSolver2D` | scientific computing | medium | analytic-solution L2 error | log-scaled error reduction |
-| `Combinatorics/GraphMaxCut` | combinatorial optimization | hard | exact max-cut (weighted) | mean gap-closed |
-| `Biology/ProteinLatticeHP` | biophysics | hard | HP lattice energy (2D) | mean fraction of optimal contacts |
-| `Optimization/CirclePacking` | computational geometry | hard | valid packing side length | mean gap from grid to Packomania best |
-| `Algorithm/MatrixMultiplicationRank` | algebraic complexity | **flagship** | exact tensor decomposition | uncapped, SoTA-relative (AlphaEvolve) |
-| `Mathematics/CapSet` | extremal combinatorics | **flagship** | cap-set verification | uncapped, SoTA-relative (FunSearch) |
+**50 tasks across 50 scientific domains**, spanning the difficulty ladder:
+- **3 medium** (on-ramp): LennardJonesCluster, SpinGlassGroundState, PoissonSolver2D
+- **45 hard**: fluid dynamics, control theory, cryptography, geophysics, quantum computing, etc.
+- **2 flagship** (uncapped, AlphaEvolve-tier): MatrixMultiplicationRank, CapSet
 
-All oracles are pure `numpy`/`scipy`, CPU-only, with documented reference values. Flagship
-tasks use **uncapped scoring** — reaching published SoTA = 1.0, beating it > 1.0.
+Domains include: acoustics, aerodynamics, astrophysics, bioinformatics, biology, chemical
+engineering, chemistry, climatology, combinatorics, control theory, cryptography, ecology,
+electrical engineering, electrochemistry, electromagnetism, epidemiology, evolutionary biology,
+fluid dynamics, genetics, geophysics, graph theory, image processing, materials science,
+mathematics, network science, nuclear physics, numerical methods, oceanography, operations
+research, optics, optimization, pharmacology, photonics, physics, plasma physics, power systems,
+quantum computing, robotics, scheduling, scientific computing, seismology, signal processing,
+spectroscopy, statistical mechanics, structural engineering, telecommunications, thermodynamics,
+tribology, and more.
+
+All oracles are pure `numpy`/`scipy`, CPU-only, deterministic. 20 tasks have full scientific
+oracles; 30 have stub evaluators inviting community contributions (see `CONTRIBUTING.md`).
+Flagship tasks use **uncapped scoring** — reaching published SoTA = 1.0, beating it > 1.0.
 
 ## Quickstart
 
