@@ -1,0 +1,3 @@
+1) Only edit solution.py. Keep the design_array() signature.
+2) numpy/scipy/stdlib only. CPU, seconds. No network.
+3) Do not read verification/ or frontier_eval/.

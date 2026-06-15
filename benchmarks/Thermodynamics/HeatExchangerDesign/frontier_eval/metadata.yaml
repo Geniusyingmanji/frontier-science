@@ -1,0 +1,11 @@
+domain: Thermodynamics
+task: HeatExchangerDesign
+difficulty: hard
+oracle_type: physical_sim
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 5
+science_metric: effectiveness
+reference_baseline: "single_pass"
+reference_sota: "optimized_multipass"
+citation: "Incropera & DeWitt 2006; Shah & Sekulic 2003"
