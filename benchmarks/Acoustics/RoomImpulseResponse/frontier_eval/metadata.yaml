@@ -1,0 +1,11 @@
+domain: Acoustics
+task: RoomImpulseResponse
+difficulty: hard
+oracle_type: physical_sim
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 10
+science_metric: mean_rir_reconstruction_snr
+reference_baseline: "single_reflection"
+reference_sota: "high_order_image_source"
+citation: "Allen & Berkley 1979; Lehmann & Johansson 2008"

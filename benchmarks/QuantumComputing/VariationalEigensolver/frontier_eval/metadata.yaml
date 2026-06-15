@@ -1,0 +1,11 @@
+domain: QuantumComputing
+task: VariationalEigensolver
+difficulty: hard
+oracle_type: analytical
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 10
+science_metric: mean_energy_gap_closed
+reference_baseline: "random_parameters"
+reference_sota: "exact_diagonalization"
+citation: "Peruzzo et al. 2014; Kandala et al. 2017"

@@ -1,0 +1,11 @@
+domain: FluidDynamics
+task: LidDrivenCavity
+difficulty: hard
+oracle_type: analytical
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 30
+science_metric: velocity_profile_accuracy
+reference_baseline: "stokes_flow"
+reference_sota: "ghia_1982_benchmark"
+citation: "Ghia et al. 1982; Erturk et al. 2005"
