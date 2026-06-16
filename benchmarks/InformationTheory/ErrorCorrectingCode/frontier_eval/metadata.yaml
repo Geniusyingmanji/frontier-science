@@ -1,0 +1,11 @@
+domain: InformationTheory
+task: ErrorCorrectingCode
+difficulty: hard
+oracle_type: analytical
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 30
+science_metric: minimum_hamming_distance
+reference_baseline: "random systematic code"
+reference_sota: "BCH/Golay/Reed-Muller (codetables.de)"
+citation: "MacWilliams & Sloane 1977; Grassl codetables.de"
