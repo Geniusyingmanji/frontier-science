@@ -1,0 +1,7 @@
+domain: QuantumChemistry
+task: HartreeFockSCF
+difficulty: hard
+oracle_type: physical_sim
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 10
