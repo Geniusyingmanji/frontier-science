@@ -1,0 +1,11 @@
+domain: Photonics
+task: MultilayerThinFilm
+difficulty: hard
+oracle_type: physical_sim
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 5
+science_metric: broadband_antireflection_quality
+reference_baseline: "single_layer_MgF2_quarter_wave"
+reference_sota: "optimized 6-layer broadband AR (Dobrowolski), mean R < 0.1%"
+citation: "Macleod 2017; Dobrowolski et al. Appl. Opt. 35, 644 (1996)"
