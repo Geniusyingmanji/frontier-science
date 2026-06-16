@@ -1,0 +1,2 @@
+1) Only edit solution.py. Keep find_nash(A, B) -> (p, q) probability vectors.
+2) numpy/scipy only. CPU, seconds. Do not read verification/ or frontier_eval/.

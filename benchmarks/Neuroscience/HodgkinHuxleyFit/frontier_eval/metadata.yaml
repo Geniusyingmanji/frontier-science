@@ -1,0 +1,11 @@
+domain: Neuroscience
+task: HodgkinHuxleyFit
+difficulty: hard
+oracle_type: physical_sim
+score_mode: clipped
+gpu_required: false
+eval_time_seconds: 10
+science_metric: voltage_trace_rmse_reduction
+reference_baseline: "20% perturbed standard HH parameters"
+reference_sota: "true generating parameters (RMSE=0)"
+citation: "Hodgkin & Huxley 1952; Buhry et al. 2012"
