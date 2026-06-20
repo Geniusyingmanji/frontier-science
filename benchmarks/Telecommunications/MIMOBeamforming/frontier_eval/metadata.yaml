@@ -1,7 +1,0 @@
-domain: Telecommunications
-task: MIMOBeamforming
-difficulty: hard
-oracle_type: analytical
-score_mode: clipped
-gpu_required: false
-eval_time_seconds: 10

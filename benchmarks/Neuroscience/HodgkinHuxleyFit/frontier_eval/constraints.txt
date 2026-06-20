@@ -1,2 +1,0 @@
-1) Only edit solution.py. Keep fit_hh() -> dict with 8 HH parameters.
-2) numpy/scipy only. CPU. Do not read verification/ or frontier_eval/.
