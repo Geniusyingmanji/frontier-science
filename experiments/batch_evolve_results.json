@@ -1,0 +1,402 @@
+[
+  {
+    "task": "AcousticMetamaterials/BroadbandAbsorber",
+    "baseline": 0.0,
+    "best": 0.0023797005688919303,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 139.6
+  },
+  {
+    "task": "Acoustics/RoomImpulseResponse",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 126.7
+  },
+  {
+    "task": "Algorithm/MatrixMultiplicationRank",
+    "baseline": 0.0,
+    "best": 0.7291666666666666,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 109.2
+  },
+  {
+    "task": "Astrodynamics/LowThrustTransfer",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 176.3
+  },
+  {
+    "task": "AtmosphericScience/RadiativeTransferFit",
+    "baseline": 0.0,
+    "best": 0.6669646368906906,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 137.3
+  },
+  {
+    "task": "BayesianInference/OptimalExperimentDesign",
+    "baseline": 0.0,
+    "best": 0.5,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 149.8
+  },
+  {
+    "task": "Biology/ProteinLatticeHP",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 271.7
+  },
+  {
+    "task": "ChemicalKinetics/ReactionMechanismFitting",
+    "baseline": 0.0,
+    "best": 0.9441001769854855,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 155.4
+  },
+  {
+    "task": "Chemistry/LennardJonesCluster",
+    "baseline": 0.07668483422773749,
+    "best": 1.0,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 193.0
+  },
+  {
+    "task": "ClimateScience/EnergyBalanceModel",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 184.5
+  },
+  {
+    "task": "Combinatorics/GraphMaxCut",
+    "baseline": 1.0777394499169796e-06,
+    "best": 0.9999991515345276,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 187.8
+  },
+  {
+    "task": "ControlTheory/InvertedPendulumSwingUp",
+    "baseline": 0.0,
+    "best": 0.7767261674531323,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 126.0
+  },
+  {
+    "task": "Cryptography/LatticeSVP",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 153.9
+  },
+  {
+    "task": "DynamicalSystems/LyapunovControl",
+    "baseline": 0.0,
+    "best": 0.30666518956256944,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 138.0
+  },
+  {
+    "task": "Ecology/LotkaVolterraCalibration",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 212.9
+  },
+  {
+    "task": "Elasticity/TopologyOptimization",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 110.6
+  },
+  {
+    "task": "Electromagnetics/AntennaArraySynthesis",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 157.5
+  },
+  {
+    "task": "Epidemiology/SIRParameterEstimation",
+    "baseline": 0.0,
+    "best": 0.9920211654712396,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 467.7
+  },
+  {
+    "task": "FluidDynamics/LidDrivenCavity",
+    "baseline": 0.0,
+    "best": 0.9456277206910765,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 154.9
+  },
+  {
+    "task": "FluidMechanics/StokesShapeDrag",
+    "baseline": 0.002645609099382421,
+    "best": 0.002645609099382421,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 136.8
+  },
+  {
+    "task": "GameTheory/NashEquilibrium",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 3,
+    "evaluated": 4,
+    "wall_seconds": 160.3
+  },
+  {
+    "task": "Geophysics/GravityInversion",
+    "baseline": 3.822260582853762e-14,
+    "best": 2.4350867107683736e-05,
+    "accepted": 3,
+    "evaluated": 4,
+    "wall_seconds": 143.8
+  },
+  {
+    "task": "Geophysics/SeismicInversion",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 180.3
+  },
+  {
+    "task": "InformationTheory/ErrorCorrectingCode",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 87.3
+  },
+  {
+    "task": "InventoryManagement/MultiEchelonStock",
+    "baseline": 0.0,
+    "best": 0.8272521246458923,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 126.9
+  },
+  {
+    "task": "MaterialsScience/AlloyHardnessOptimization",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 133.9
+  },
+  {
+    "task": "Mathematics/CapSet",
+    "baseline": 0.0,
+    "best": 0.670405982905983,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 198.9
+  },
+  {
+    "task": "Neuroscience/HodgkinHuxleyFit",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 17.9
+  },
+  {
+    "task": "NuclearEngineering/NeutronDiffusionCriticality",
+    "baseline": 0.0,
+    "best": 0.2634956442148413,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 120.9
+  },
+  {
+    "task": "NumericalMethods/StiffODESolver",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 3,
+    "evaluated": 4,
+    "wall_seconds": 106.5
+  },
+  {
+    "task": "Optics/DiffractionGratingDesign",
+    "baseline": 0.0,
+    "best": 0.004703064746518974,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 111.6
+  },
+  {
+    "task": "Optimization/CirclePacking",
+    "baseline": 0.0,
+    "best": 0.6158682149626334,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 352.8
+  },
+  {
+    "task": "ParticlePhysics/CalorimeterDesign",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 138.6
+  },
+  {
+    "task": "Photonics/MultilayerThinFilm",
+    "baseline": 0.6051470436970185,
+    "best": 0.956505304509733,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 249.6
+  },
+  {
+    "task": "Physics/SpinGlassGroundState",
+    "baseline": 0.14588691180194335,
+    "best": 0.9999999849418636,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 127.2
+  },
+  {
+    "task": "PlasmaPhysics/MagneticMirror",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 70.6
+  },
+  {
+    "task": "PopulationGenetics/DemographicSFS",
+    "baseline": 0.0,
+    "best": 0.667452434261114,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 486.9
+  },
+  {
+    "task": "PowerSystems/OptimalPowerFlow",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 137.0
+  },
+  {
+    "task": "QuantumChemistry/HartreeFockSCF",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 118.4
+  },
+  {
+    "task": "QuantumComputing/VariationalEigensolver",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 62.9
+  },
+  {
+    "task": "Robotics/TrajectoryPlanning",
+    "baseline": 0.0,
+    "best": 0.9924261303441732,
+    "accepted": 3,
+    "evaluated": 4,
+    "wall_seconds": 142.5
+  },
+  {
+    "task": "Scheduling/FlowShopMakespan",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 79.1
+  },
+  {
+    "task": "ScientificComputing/PoissonSolver2D",
+    "baseline": 1.7466745205381175e-07,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 25.0
+  },
+  {
+    "task": "Semiconductor/MOSFETDoping",
+    "baseline": 0.0,
+    "best": 1.3249162426406216e-05,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 109.7
+  },
+  {
+    "task": "SignalProcessing/SparseRecovery",
+    "baseline": 0.0,
+    "best": 0.9583008265612832,
+    "accepted": 3,
+    "evaluated": 4,
+    "wall_seconds": 181.9
+  },
+  {
+    "task": "StructuralEngineering/TrussWeightMinimization",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 90.5
+  },
+  {
+    "task": "Telecommunications/MIMOBeamforming",
+    "baseline": 0.0,
+    "best": 1.0,
+    "accepted": 1,
+    "evaluated": 4,
+    "wall_seconds": 92.2
+  },
+  {
+    "task": "Thermodynamics/HeatExchangerDesign",
+    "baseline": 0.0,
+    "best": 0.7467569293455028,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 116.3
+  },
+  {
+    "task": "Thermodynamics/RankineCycleOpt",
+    "baseline": 0.0,
+    "best": 0.0,
+    "accepted": 0,
+    "evaluated": 4,
+    "wall_seconds": 72.7
+  },
+  {
+    "task": "Transportation/TrafficSignalTiming",
+    "baseline": 0.0,
+    "best": 0.8762163631028398,
+    "accepted": 2,
+    "evaluated": 4,
+    "wall_seconds": 171.5
+  }
+]
